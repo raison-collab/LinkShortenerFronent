@@ -12,6 +12,7 @@ const Register = () => import('./views/RegisterPage.vue')
 const Dashboard = () => import('./views/DashboardPage.vue')
 const Profile = () => import('./views/ProfilePage.vue')
 const LinkStats = () => import('./views/LinkStatsPage.vue')
+const LinkExpired = () => import('./views/ExpiredLinkPage.vue')
 const NotFound = () => import('./views/NotFoundPage.vue')
 
 const router = createRouter({
@@ -38,6 +39,7 @@ const router = createRouter({
       name: 'link-stats',
       meta: { requiresAuth: true }
     },
+    { path: '/expired', component: LinkExpired, name: 'link-expired' },
     { path: '/:pathMatch(.*)*', component: NotFound, name: 'not-found' }
   ],
   scrollBehavior(to, from, savedPosition) {
